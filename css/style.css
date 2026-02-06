@@ -1,12 +1,13 @@
 /* --- 0. 基礎設定 --- */
 :root {
-  --primary-color: #006450; /* 熱帶深綠 */
-  --accent-color: #e67e22; /* 泰奶橘 */
+  --primary-color: #006450; 
+  --accent-color: #e67e22; 
   --active-tab-bg: #d35400;
   --map-btn-color: #2980b9;
-  --bg-color: #fdfefe;
+  --bg-color: #e8ecef;  
   --text-color: #333;
   --card-bg: #ffffff;
+  --transport-color: #7f8c8d;
 }
 
 * {
@@ -24,9 +25,8 @@ body {
   padding-bottom: 60px;
 }
 
-/* --- 1. Hero Section (更新：鄭王廟夕陽) --- */
+/* --- 1. Hero Section --- */
 header {
-  /* 這張是 Wat Arun Sunset (Unsplash) */
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
     url("../images/coverPage.jpeg");
   background-size: cover;
