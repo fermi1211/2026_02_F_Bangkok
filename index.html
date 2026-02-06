@@ -1,346 +1,747 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2026 過年泰國曼谷之旅</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
     <header>
-        <h1>2026 過年泰國曼谷之旅</h1>
-        <div class="tagline">2026.02.15 - 02.19</div>
-        <div id="countdown-box">
-            <p>距離出發還有：</p>
-            <div class="timer">
-                <div><span id="days">0</span><small>天</small></div>
-                <div><span id="hours">0</span><small>時</small></div>
-                <div><span id="minutes">0</span><small>分</small></div>
-                <div><span id="seconds">0</span><small>秒</small></div>
-            </div>
+      <h1>2026 過年泰國曼谷之旅</h1>
+      <div class="tagline">2026.02.15 - 02.19</div>
+      <div id="countdown-box">
+        <p>距離出發還有：</p>
+        <div class="timer">
+          <div><span id="days">0</span><small>天</small></div>
+          <div><span id="hours">0</span><small>時</small></div>
+          <div><span id="minutes">0</span><small>分</small></div>
+          <div><span id="seconds">0</span><small>秒</small></div>
         </div>
+      </div>
     </header>
 
     <div class="nav-container">
-        <div class="nav-wrapper">
-            <button class="tab-btn active" onclick="openTab('tab-day1')">2/15(日)</button>
-            <button class="tab-btn" onclick="openTab('tab-day2')">2/16(一)</button>
-            <button class="tab-btn" onclick="openTab('tab-day3')">2/17(二)</button>
-            <button class="tab-btn" onclick="openTab('tab-day4')">2/18(三)</button>
-            <button class="tab-btn" onclick="openTab('tab-day5')">2/19(四)</button>
-            <button class="tab-btn" onclick="openTab('tab-checklist')">🎒 清單</button>
-        </div>
+      <div class="nav-wrapper">
+        <button class="tab-btn active" onclick="openTab('tab-day1')">
+          2/15(日)
+        </button>
+        <button class="tab-btn" onclick="openTab('tab-day2')">2/16(一)</button>
+        <button class="tab-btn" onclick="openTab('tab-day3')">2/17(二)</button>
+        <button class="tab-btn" onclick="openTab('tab-day4')">2/18(三)</button>
+        <button class="tab-btn" onclick="openTab('tab-day5')">2/19(四)</button>
+        <button class="tab-btn" onclick="openTab('tab-checklist')">
+          🎒 清單
+        </button>
+      </div>
     </div>
 
     <div class="container">
-        
-        <div id="tab-day1" class="tab-content active">
-            <h2 class="section-title">Day 1 抵達曼谷</h2>
-            <div class="day-card">
-                <div class="day-header"><h3>移動日 & 夜市</h3><span>2/15 (週日)</span></div>
-                <div class="day-body">
-                    <ul class="activity-list">
-                        <li>
-                            <span class="time">13:25</span>
-                            <div class="detail-wrapper">
-                                <span>桃園機場出發 (TPE)</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">16:30</span>
-                            <div class="detail-wrapper">
-                                <span>抵達曼谷機場 (BKK)</span>
-                                <small style="color:#666">領行李、換錢</small>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">18:30</span>
-                            <div class="detail-wrapper">
-                                <span>飯店 Check-in 休息</span>
-                                <a href="http://googleusercontent.com/maps.google.com/query=Bangkok+Hotel" target="_blank" class="map-link">📍 導航</a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">20:00</span>
-                            <div class="detail-wrapper">
-                                <span>晚餐：Jodd Fairs 喬德夜市</span>
-                                <small style="color:#666">必吃火山排骨、西瓜冰沙</small>
-                                <a href="http://googleusercontent.com/maps.google.com/query=Jodd+Fairs" target="_blank" class="map-link">📍 導航</a>
-                            </div>
-                        </li>
-                    </ul>
+      <div id="tab-day1" class="tab-content active">
+        <h2 class="section-title">Day 1 抵達曼谷</h2>
+        <div class="day-card">
+          <div class="day-header">
+            <h3>移動日 & 夜市</h3>
+            <span>2/15 (週日)</span>
+          </div>
+          <div class="day-body">
+            <ul class="activity-list">
+              <li class="activity">
+                <span class="time">09:00</span>
+                <div class="detail-wrapper">
+                  <span>台中出發</span>
                 </div>
-            </div>
-        </div>
+              </li>
 
-        <div id="tab-day2" class="tab-content">
-            <h2 class="section-title">Day 2 經典古蹟</h2>
-            <div class="day-card">
-                <div class="day-header"><h3>皇宮與河岸風光</h3><span>2/16 (週一)</span></div>
-                <div class="day-body">
-                    <ul class="activity-list">
-                        <li>
-                            <span class="time">09:00</span>
-                            <div class="detail-wrapper">
-                                <span>大皇宮 & 玉佛寺</span>
-                                <small style="color:#e74c3c">★ 需穿長褲/長裙、有袖上衣</small>
-                                <a href="http://googleusercontent.com/maps.google.com/query=The+Grand+Palace" target="_blank" class="map-link">📍 導航</a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">11:30</span>
-                            <div class="detail-wrapper">
-                                <span>臥佛寺 (Wat Pho)</span>
-                                <a href="http://googleusercontent.com/maps.google.com/query=Wat+Pho" target="_blank" class="map-link">📍 導航</a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">13:00</span>
-                            <div class="detail-wrapper">
-                                <span>午餐：鄭王廟對岸景觀餐廳</span>
-                                <small style="color:#666">推薦 The Deck (需預約)</small>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">15:30</span>
-                            <div class="detail-wrapper">
-                                <span>ICONSIAM 暹羅天地</span>
-                                <small style="color:#666">室內水上市場、吹冷氣</small>
-                                <a href="http://googleusercontent.com/maps.google.com/query=ICONSIAM" target="_blank" class="map-link">📍 導航</a>
-                            </div>
-                        </li>
-                    </ul>
+              <div class="transit-app-card">
+                <div class="transit-header" onclick="toggleTransit(this)">
+                  <div class="th-left">
+                    <div class="th-route">
+                      <span class="transit-tag" style="background-color:#e8f5e9; color:#2e7d32;">開車 CAR</span>
+                      HOME ➔ TPE
+                    </div>
+                    <div class="th-time">09:00 - 11:00 (約 2 時)</div>
+                  </div>
+                  <div class="th-right">
+                    <div class="th-price" style="color:#27ae60;">ETC</div>
+                    <div class="th-arrow">▼</div>
+                  </div>
                 </div>
-            </div>
-        </div>
 
-        <div id="tab-day3" class="tab-content">
-            <h2 class="section-title">Day 3 親子樂園</h2>
-            <div class="day-card">
-                <div class="day-header"><h3>野生動物園一日遊</h3><span>2/17 (週二)</span></div>
-                <div class="day-body">
-                    <ul class="activity-list">
-                        <li>
-                            <span class="time">08:30</span>
-                            <div class="detail-wrapper">
-                                <span>包車前往 Safari World</span>
-                                <a href="http://googleusercontent.com/maps.google.com/query=Safari+World+Bangkok" target="_blank" class="map-link">📍 導航</a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">10:00</span>
-                            <div class="detail-wrapper">
-                                <span>野生動物園區 (Safari Park)</span>
-                                <small style="color:#666">近距離看長頸鹿、斑馬</small>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">12:00</span>
-                            <div class="detail-wrapper">
-                                <span>園區內午餐 & 海洋表演</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">16:00</span>
-                            <div class="detail-wrapper">
-                                <span>返回曼谷市區</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">18:30</span>
-                            <div class="detail-wrapper">
-                                <span>晚餐：建興酒家 (咖哩螃蟹)</span>
-                                <a href="http://googleusercontent.com/maps.google.com/query=Somboon+Seafood" target="_blank" class="map-link">📍 導航</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+                <div class="transit-body">
+                  <div class="transit-timeline">
+                    <div class="transit-row">
+                      <div class="t-time">09:00</div>
+                      <div class="t-line-col">
+                        <div class="t-station-dot" style="border-color:#27ae60;"></div>
+                        <div class="t-line-bar" style="background:#27ae60;"></div>
+                      </div>
+                      <div class="t-content">
+                        <div class="t-station-name">HOME</div>
+                        <div class="t-info">
+                            <strong>出發前往機場</strong><br>
+                            <small>檢查護照是否帶了？瓦斯關了嗎？</small>
+                        </div>
+                      </div>
+                    </div>
 
-        <div id="tab-day4" class="tab-content">
-            <h2 class="section-title">Day 4 市區購物</h2>
-            <div class="day-card">
-                <div class="day-header"><h3>Shopping & 按摩</h3><span>2/18 (週三)</span></div>
-                <div class="day-body">
-                    <ul class="activity-list">
-                        <li>
-                            <span class="time">10:00</span>
-                            <div class="detail-wrapper">
-                                <span>參拜四面佛 (Erawan Shrine)</span>
-                                <a href="http://googleusercontent.com/maps.google.com/query=Erawan+Shrine" target="_blank" class="map-link">📍 導航</a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">11:00</span>
-                            <div class="detail-wrapper">
-                                <span>Central World 購物中心</span>
-                                <small style="color:#666">曼谷最大百貨，午餐在這裡吃</small>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">14:30</span>
-                            <div class="detail-wrapper">
-                                <span>Let's Relax SPA 按摩</span>
-                                <small style="color:#666">享受 2 小時泰式按摩</small>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">17:00</span>
-                            <div class="detail-wrapper">
-                                <span>Big C 採買伴手禮</span>
-                                <small style="color:#666">Pocky、海苔、大哥豆</small>
-                                <a href="http://googleusercontent.com/maps.google.com/query=Big+C+Supercenter+Ratchadamri" target="_blank" class="map-link">📍 導航</a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">19:30</span>
-                            <div class="detail-wrapper">
-                                <span>晚餐：高空酒吧 (Red Sky Bar)</span>
-                                <small style="color:#666">看夜景喝飲料</small>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+                    <div class="transit-row">
+                      <div class="t-time">10:00</div>
+                      <div class="t-line-col">
+                          <div class="t-station-dot" style="border-color:#27ae60; width:12px; height:12px;"></div>
+                          <div class="t-line-bar" style="background:#27ae60;"></div>
+                      </div>
+                      <div class="t-content">
+                          <div class="t-station-name">途經：泰安/湖口服務區</div>
+                          <div class="t-duration">上廁所、買杯咖啡提神</div>
+                      </div>
+                    </div>
 
-        <div id="tab-day5" class="tab-content">
-            <h2 class="section-title">Day 5 賦歸</h2>
-            <div class="day-card">
-                <div class="day-header"><h3>最後衝刺 & 機場</h3><span>2/19 (週四)</span></div>
-                <div class="day-body">
-                    <ul class="activity-list">
-                        <li>
-                            <span class="time">09:00</span>
-                            <div class="detail-wrapper">
-                                <span>飯店早餐 / 整理行李</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">11:00</span>
-                            <div class="detail-wrapper">
-                                <span>最後退房 Check-out</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">14:00</span>
-                            <div class="detail-wrapper">
-                                <span>前往機場 (預留 3 小時)</span>
-                                <small style="color:#666">可能會塞車，建議提早出發</small>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">15:10</span>
-                            <div class="detail-wrapper">
-                                <span>辦理登機 & 免稅店逛逛</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="time">17:40</span>
-                            <div class="detail-wrapper">
-                                <span>飛機起飛 ✈️ 回溫暖的家</span>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="transit-row">
+                      <div class="t-time">11:00</div>
+                      <div class="t-line-col">
+                        <div class="t-station-dot" style="border-color:#27ae60;"></div>
+                      </div>
+                      <div class="t-content">
+                        <div class="t-station-name">桃園國際機場第二航廈 (T2)</div>
+                        <div class="t-info">
+                          <strong>星宇航空櫃檯報到</strong><br>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-        </div>
+              </div>
 
-        <div id="tab-checklist" class="tab-content">
-            <h2 class="section-title">🎒 泰國行李檢查</h2>
-            <p style="text-align:center; color:#666; margin-bottom:15px; font-size:0.9rem;">2月天氣舒適，但早晚可能有微風</p>
-            
-            <div class="checklist-grid">
-                <div class="check-category">
-                    <h3>🛂 證件與錢財</h3>
-                    <label class="check-item"><input type="checkbox" id="item-passport"><span>護照 (期限>6個月)</span></label>
-                    <label class="check-item"><input type="checkbox" id="item-visa"><span>簽證確認 (免簽?)</span></label>
-                    <label class="check-item"><input type="checkbox" id="item-baht"><span>泰銖現金</span></label>
-                    <label class="check-item"><input type="checkbox" id="item-card"><span>信用卡</span></label>
+              <li class="activity">
+                <span class="time">11:00</span>
+                <div class="detail-wrapper">
+                  <span>抵達桃園機場(TPE)</span>
                 </div>
-                <div class="check-category">
-                    <h3>📱 APP與電子</h3>
-                    <label class="check-item"><input type="checkbox" id="item-sim"><span>網卡 (AIS/True)</span></label>
-                    <label class="check-item"><input type="checkbox" id="item-grab"><span>下載 Grab (叫車)</span></label>
-                    <label class="check-item"><input type="checkbox" id="item-powerbank"><span>行動電源</span></label>
-                </div>
-                <div class="check-category">
-                    <h3>👕 衣物</h3>
-                    <label class="check-item"><input type="checkbox" id="item-clothes"><span>夏日衣物 (透氣)</span></label>
-                    <label class="check-item"><input type="checkbox" id="item-longpants"><span>長褲 (大皇宮用)</span></label>
-                    <label class="check-item"><input type="checkbox" id="item-jacket"><span>薄外套 (冷氣強)</span></label>
-                    <label class="check-item"><input type="checkbox" id="item-swim"><span>泳衣</span></label>
-                </div>
-                <div class="check-category">
-                    <h3>💊 雜物</h3>
-                    <label class="check-item"><input type="checkbox" id="item-stomach"><span>腸胃藥 (必備!)</span></label>
-                    <label class="check-item"><input type="checkbox" id="item-mosquito"><span>防蚊液</span></label>
-                    <label class="check-item"><input type="checkbox" id="item-sun"><span>防曬乳</span></label>
-                </div>
-            </div>
-        </div>
+              </li>
 
+              <li class="activity">
+                <span class="time">13:25</span>
+                <div class="detail-wrapper">
+                  <span>航班起飛</span>
+                </div>
+              </li>
+
+              <div class="transit-app-card">
+                <div class="transit-header" onclick="toggleTransit(this)">
+                  <div class="th-left">
+                    <div class="th-route">
+                      <span class="transit-tag" style="background-color:#f9f5eb; color:#9e8252;">星宇航空 JX745</span>
+                      TPE ➔ BKK
+                    </div>
+                    <div class="th-time">13:25 - 16:30 (約 4 時 5 分)</div>
+                  </div>
+                  <div class="th-right">
+                    <div class="th-price" style="color:#555;">已開票</div>
+                    <div class="th-arrow">▼</div>
+                  </div>
+                </div>
+
+                <div class="transit-body">
+                  <div class="transit-timeline">
+                    <div class="transit-row">
+                      <div class="t-time">13:25</div>
+                      <div class="t-line-col">
+                        <div class="t-station-dot" style="border-color:#bfa373;"></div>
+                        <div class="t-line-bar" style="background:#bfa373;"></div>
+                      </div>
+                      <div class="t-content">
+                        <div class="t-station-name">桃園國際機場第二航廈 (TPE T2)</div>
+                      </div>
+                    </div>
+
+                    <div class="transit-row">
+                      <div class="t-time">16:30</div>
+                      <div class="t-line-col">
+                        <div class="t-station-dot" style="border-color:#bfa373;"></div>
+                      </div>
+                      <div class="t-content">
+                        <div class="t-station-name">素萬那普國際機場 (BKK)</div>
+                      </div>
+                    </div>
+
+                    <div class="cost-section" style="background-color:#fbfbfb;">
+                      <div class="cost-label" style="color:#9e8252;">
+                          <span>🎫 行李額度</span>
+                      </div>
+                      <div class="cost-detail" style="color:#666;">
+                          托運 23kg x 2件 / 手提 7kg
+                      </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+              <li class="activity">
+                <span class="time">16:30</span>
+                <div class="detail-wrapper">
+                  <span>抵達曼谷機場 (BKK)</span>
+                  <small style="color: #666">領行李、換錢、買網卡</small>
+                </div>
+              </li>
+
+              <div class="transit-app-card">
+                <div class="transit-header" onclick="toggleTransit(this)">
+                  <div class="th-left">
+                    <div class="th-route">
+                      <span class="transit-tag">ARL 機場快線</span>
+                      素萬那普 ➔ Makkasan
+                    </div>
+                    <div class="th-time">13:30 - 14:00 (約 30 分)</div>
+                  </div>
+                  <div class="th-right">
+                    <div class="th-price">฿90</div>
+                    <div class="th-arrow">▼</div>
+                  </div>
+                </div>
+
+                <div class="transit-body">
+                  <div class="transit-timeline">
+                    <div class="transit-row">
+                      <div class="t-time">13:30</div>
+                      <div class="t-line-col">
+                        <div
+                          class="t-station-dot"
+                          style="border-color: #0072bc"
+                        ></div>
+                        <div
+                          class="t-line-bar"
+                          style="background: #0072bc"
+                        ></div>
+                      </div>
+                      <div class="t-content">
+                        <div class="t-station-name">素萬那普機場站 (A1)</div>
+                        <div class="t-info">
+                          位於機場 B1 層，跟著 "Train to City" 指標走
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="transit-row">
+                      <div class="t-time">14:00</div>
+                      <div class="t-line-col">
+                        <div
+                          class="t-station-dot"
+                          style="border-color: #0072bc"
+                        ></div>
+                      </div>
+                      <div class="t-content">
+                        <div class="t-station-name">Makkasan 站 (A6)</div>
+                        <div class="t-info">下車後依指示轉乘 MRT 地鐵</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="cost-section">
+                    <div class="cost-label">
+                      <span>💰 費用試算</span>
+                    </div>
+                    <div class="cost-detail">
+                      成人 ฿45 x 2人 = <strong>฿90</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <li class="activity">
+                <span class="time">14:15</span>
+                <div class="detail-wrapper">
+                  <span>轉乘 MRT 藍線 (Phetchaburi 站)</span>
+                  <small>前往飯店 (Sukhumvit / Asok 區)</small>
+                </div>
+              </li>
+
+              <li class="activity">
+                <span class="time">15:00</span>
+                <div class="detail-wrapper">
+                  <span>飯店 Check-in 休息</span>
+                  <a
+                    href="http://googleusercontent.com/maps.google.com/query=Bangkok+Hotel"
+                    target="_blank"
+                    class="map-link"
+                    >📍 導航</a
+                  >
+                </div>
+              </li>
+
+              <li class="transport">
+                <span class="transport-icon">🚆</span>
+                <span class="transport-detail"
+                  >搭乘 MRT 地鐵至 Phra Ram 9 站</span
+                >
+              </li>
+
+              <li class="activity">
+                <span class="time">18:00</span>
+                <div class="detail-wrapper">
+                  <span>晚餐：Jodd Fairs 喬德夜市</span>
+                  <small style="color: #666">必吃火山排骨、西瓜冰沙</small>
+                  <a
+                    href="http://googleusercontent.com/maps.google.com/query=Jodd+Fairs"
+                    target="_blank"
+                    class="map-link"
+                    >📍 導航</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-day2" class="tab-content">
+        <h2 class="section-title">Day 2 經典古蹟</h2>
+        <div class="day-card">
+          <div class="day-header">
+            <h3>皇宮與河岸風光</h3>
+            <span>2/16 (週一)</span>
+          </div>
+          <div class="day-body">
+            <ul class="activity-list">
+              <li class="activity">
+                <span class="time">09:00</span>
+                <div class="detail-wrapper">
+                  <span>大皇宮 & 玉佛寺</span>
+                  <small style="color: #e74c3c"
+                    >★ 需穿長褲/長裙、有袖上衣</small
+                  >
+                  <a
+                    href="http://googleusercontent.com/maps.google.com/query=The+Grand+Palace"
+                    target="_blank"
+                    class="map-link"
+                    >📍 導航</a
+                  >
+                </div>
+              </li>
+
+              <li class="transport">
+                <span class="transport-icon">🚶</span>
+                <span class="transport-detail">步行約 10 分鐘</span>
+              </li>
+
+              <li class="activity">
+                <span class="time">11:30</span>
+                <div class="detail-wrapper">
+                  <span>臥佛寺 (Wat Pho)</span>
+                  <a
+                    href="http://googleusercontent.com/maps.google.com/query=Wat+Pho"
+                    target="_blank"
+                    class="map-link"
+                    >📍 導航</a
+                  >
+                </div>
+              </li>
+
+              <li class="transport">
+                <span class="transport-icon">⛴️</span>
+                <span class="transport-detail"
+                  >搭乘接駁船跨越昭披耶河 (約 5 分)</span
+                >
+              </li>
+
+              <li class="activity">
+                <span class="time">13:00</span>
+                <div class="detail-wrapper">
+                  <span>午餐：鄭王廟對岸景觀餐廳</span>
+                  <small style="color: #666">推薦 The Deck (需預約)</small>
+                </div>
+              </li>
+
+              <li class="transport">
+                <span class="transport-icon">⛴️</span>
+                <span class="transport-detail"
+                  >搭乘觀光船 (Hop-on Hop-off) 至 ICONSIAM</span
+                >
+              </li>
+
+              <li class="activity">
+                <span class="time">15:30</span>
+                <div class="detail-wrapper">
+                  <span>ICONSIAM 暹羅天地</span>
+                  <small style="color: #666">室內水上市場、吹冷氣</small>
+                  <a
+                    href="http://googleusercontent.com/maps.google.com/query=ICONSIAM"
+                    target="_blank"
+                    class="map-link"
+                    >📍 導航</a
+                  >
+                </div>
+              </li>
+
+              <li class="activity">
+                <span class="time">19:30</span>
+                <div class="detail-wrapper">
+                  <span>昭披耶河遊船晚餐 (預約制)</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-day3" class="tab-content">
+        <h2 class="section-title">Day 3 親子樂園</h2>
+        <div class="day-card">
+          <div class="day-header">
+            <h3>野生動物園一日遊</h3>
+            <span>2/17 (週二)</span>
+          </div>
+          <div class="day-body">
+            <ul class="activity-list">
+              <li class="transport">
+                <span class="transport-icon">🚕</span>
+                <span class="transport-detail"
+                  >建議包車或 Grab (單程約 50 分鐘)</span
+                >
+              </li>
+
+              <li class="activity">
+                <span class="time">09:00</span>
+                <div class="detail-wrapper">
+                  <span>抵達 Safari World</span>
+                  <a
+                    href="http://googleusercontent.com/maps.google.com/query=Safari+World+Bangkok"
+                    target="_blank"
+                    class="map-link"
+                    >📍 導航</a
+                  >
+                </div>
+              </li>
+
+              <li class="activity">
+                <span class="time">10:00</span>
+                <div class="detail-wrapper">
+                  <span>野生動物園區 (Safari Park)</span>
+                  <small style="color: #666">近距離看長頸鹿、斑馬</small>
+                </div>
+              </li>
+              <li class="activity">
+                <span class="time">12:00</span>
+                <div class="detail-wrapper">
+                  <span>園區內午餐 & 海洋表演</span>
+                </div>
+              </li>
+
+              <li class="transport">
+                <span class="transport-icon">🚕</span>
+                <span class="transport-detail">搭車返回市區</span>
+              </li>
+
+              <li class="activity">
+                <span class="time">18:30</span>
+                <div class="detail-wrapper">
+                  <span>晚餐：建興酒家 (咖哩螃蟹)</span>
+                  <a
+                    href="http://googleusercontent.com/maps.google.com/query=Somboon+Seafood"
+                    target="_blank"
+                    class="map-link"
+                    >📍 導航</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-day4" class="tab-content">
+        <h2 class="section-title">Day 4 市區購物</h2>
+        <div class="day-card">
+          <div class="day-header">
+            <h3>Shopping & 按摩</h3>
+            <span>2/18 (週三)</span>
+          </div>
+          <div class="day-body">
+            <ul class="activity-list">
+              <li class="transport">
+                <span class="transport-icon">🚆</span>
+                <span class="transport-detail">搭乘 BTS 至 Chit Lom 站</span>
+              </li>
+
+              <li class="activity">
+                <span class="time">10:00</span>
+                <div class="detail-wrapper">
+                  <span>參拜四面佛 (Erawan Shrine)</span>
+                  <a
+                    href="http://googleusercontent.com/maps.google.com/query=Erawan+Shrine"
+                    target="_blank"
+                    class="map-link"
+                    >📍 導航</a
+                  >
+                </div>
+              </li>
+
+              <li class="transport">
+                <span class="transport-icon">🚶</span>
+                <span class="transport-detail"
+                  >步行經空橋 (Skywalk) 約 5 分鐘</span
+                >
+              </li>
+
+              <li class="activity">
+                <span class="time">11:00</span>
+                <div class="detail-wrapper">
+                  <span>Central World 購物中心</span>
+                  <small style="color: #666"
+                    >午餐推薦：Nara Thai Cuisine 或 Go-Ang 雞飯</small
+                  >
+                </div>
+              </li>
+              <li class="activity">
+                <span class="time">14:30</span>
+                <div class="detail-wrapper">
+                  <span>Let's Relax SPA 按摩</span>
+                  <small style="color: #666">享受 2 小時泰式按摩</small>
+                </div>
+              </li>
+              <li class="activity">
+                <span class="time">17:00</span>
+                <div class="detail-wrapper">
+                  <span>Big C 採買伴手禮</span>
+                  <small style="color: #666">Pocky、海苔、大哥豆</small>
+                  <a
+                    href="http://googleusercontent.com/maps.google.com/query=Big+C+Supercenter+Ratchadamri"
+                    target="_blank"
+                    class="map-link"
+                    >📍 導航</a
+                  >
+                </div>
+              </li>
+
+              <li class="transport">
+                <span class="transport-icon">🚶</span>
+                <span class="transport-detail">步行至飯店頂樓或附近</span>
+              </li>
+
+              <li class="activity">
+                <span class="time">19:30</span>
+                <div class="detail-wrapper">
+                  <span>晚餐：高空酒吧 (Red Sky Bar)</span>
+                  <small style="color: #666">看夜景喝飲料</small>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-day5" class="tab-content">
+        <h2 class="section-title">Day 5 賦歸</h2>
+        <div class="day-card">
+          <div class="day-header">
+            <h3>最後衝刺 & 機場</h3>
+            <span>2/19 (週四)</span>
+          </div>
+          <div class="day-body">
+            <ul class="activity-list">
+              <li class="activity">
+                <span class="time">09:00</span>
+                <div class="detail-wrapper">
+                  <span>飯店早餐 / 整理行李</span>
+                </div>
+              </li>
+              <li class="activity">
+                <span class="time">11:00</span>
+                <div class="detail-wrapper">
+                  <span>最後退房 Check-out</span>
+                </div>
+              </li>
+
+              <li class="transport">
+                <span class="transport-icon">🚕</span>
+                <span class="transport-detail"
+                  >前往機場 (預留 3 小時，怕塞車)</span
+                >
+              </li>
+
+              <li class="activity">
+                <span class="time">12:30</span>
+                <div class="detail-wrapper">
+                  <span>抵達機場 & 辦理登機</span>
+                  <small style="color: #666">最後免稅店購物</small>
+                </div>
+              </li>
+              <li class="activity">
+                <span class="time">17:00</span>
+                <div class="detail-wrapper">
+                  <span>飛機起飛 ✈️ 回溫暖的家</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-checklist" class="tab-content">
+        <h2 class="section-title">🎒 泰國行李檢查</h2>
+        <p
+          style="
+            text-align: center;
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+          "
+        >
+          2月天氣舒適，但早晚可能有微風
+        </p>
+
+        <div class="checklist-grid">
+          <div class="check-category">
+            <h3>🛂 證件與錢財</h3>
+            <label class="check-item"
+              ><input type="checkbox" id="item-passport" /><span
+                >護照 (期限>6個月)</span
+              ></label
+            >
+            <label class="check-item"
+              ><input type="checkbox" id="item-visa" /><span
+                >簽證確認 (免簽?)</span
+              ></label
+            >
+            <label class="check-item"
+              ><input type="checkbox" id="item-baht" /><span
+                >泰銖現金</span
+              ></label
+            >
+            <label class="check-item"
+              ><input type="checkbox" id="item-card" /><span
+                >信用卡</span
+              ></label
+            >
+          </div>
+          <div class="check-category">
+            <h3>📱 APP與電子</h3>
+            <label class="check-item"
+              ><input type="checkbox" id="item-sim" /><span
+                >網卡 (AIS/True)</span
+              ></label
+            >
+            <label class="check-item"
+              ><input type="checkbox" id="item-grab" /><span
+                >下載 Grab (叫車)</span
+              ></label
+            >
+            <label class="check-item"
+              ><input type="checkbox" id="item-powerbank" /><span
+                >行動電源</span
+              ></label
+            >
+          </div>
+          <div class="check-category">
+            <h3>👕 衣物</h3>
+            <label class="check-item"
+              ><input type="checkbox" id="item-clothes" /><span
+                >夏日衣物 (透氣)</span
+              ></label
+            >
+            <label class="check-item"
+              ><input type="checkbox" id="item-longpants" /><span
+                >長褲 (大皇宮用)</span
+              ></label
+            >
+            <label class="check-item"
+              ><input type="checkbox" id="item-jacket" /><span
+                >薄外套 (冷氣強)</span
+              ></label
+            >
+            <label class="check-item"
+              ><input type="checkbox" id="item-swim" /><span>泳衣</span></label
+            >
+          </div>
+          <div class="check-category">
+            <h3>💊 雜物</h3>
+            <label class="check-item"
+              ><input type="checkbox" id="item-stomach" /><span
+                >腸胃藥 (必備!)</span
+              ></label
+            >
+            <label class="check-item"
+              ><input type="checkbox" id="item-mosquito" /><span
+                >防蚊液</span
+              ></label
+            >
+            <label class="check-item"
+              ><input type="checkbox" id="item-sun" /><span>防曬乳</span></label
+            >
+          </div>
+        </div>
+      </div>
     </div>
 
     <footer>
-        <p>Made by F.C. | 2026 Bangkok Trip</p>
+      <p>Made by F.C. | 2026 Bangkok Trip</p>
     </footer>
 
     <script>
-        // 1. 分頁切換
-        function openTab(tabId) {
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
+      // 1. 分頁切換
+      function openTab(tabId) {
+        const contents = document.querySelectorAll(".tab-content");
+        contents.forEach((content) => content.classList.remove("active"));
 
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
+        const buttons = document.querySelectorAll(".tab-btn");
+        buttons.forEach((btn) => btn.classList.remove("active"));
 
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
-            
-            window.scrollTo({ top: 380, behavior: 'smooth' });
+        document.getElementById(tabId).classList.add("active");
+        event.currentTarget.classList.add("active");
+
+        window.scrollTo({ top: 380, behavior: "smooth" });
+      }
+
+      // 2. 倒數計時 (2026/02/15)
+      const tripDate = new Date("2026-02-15T13:25:00").getTime();
+
+      const countdownFunction = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = tripDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+
+        if (distance < 0) {
+          clearInterval(countdownFunction);
+          document.getElementById("countdown-box").innerHTML =
+            "<h2>🎉 出發啦！ 🎉</h2>";
         }
+      }, 1000);
 
-        // 2. 倒數計時 (2026/02/15)
-        const tripDate = new Date("2026-02-15T13:25:00").getTime(); 
-
-        const countdownFunction = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = tripDate - now;
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = days;
-            document.getElementById("hours").innerText = hours;
-            document.getElementById("minutes").innerText = minutes;
-            document.getElementById("seconds").innerText = seconds;
-
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("countdown-box").innerHTML = "<h2>🎉 出發啦！ 🎉</h2>";
-            }
-        }, 1000);
-
-        // 3. 檢查清單
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach(box => {
-            const savedState = localStorage.getItem(box.id);
-            if (savedState === 'true') {
-                box.checked = true;
-                box.parentElement.classList.add('completed');
-            }
-            box.addEventListener('change', () => {
-                localStorage.setItem(box.id, box.checked);
-                if(box.checked) {
-                    box.parentElement.classList.add('completed');
-                } else {
-                    box.parentElement.classList.remove('completed');
-                }
-            });
+      // 3. 檢查清單
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach((box) => {
+        const savedState = localStorage.getItem(box.id);
+        if (savedState === "true") {
+          box.checked = true;
+          box.parentElement.classList.add("completed");
+        }
+        box.addEventListener("change", () => {
+          localStorage.setItem(box.id, box.checked);
+          if (box.checked) {
+            box.parentElement.classList.add("completed");
+          } else {
+            box.parentElement.classList.remove("completed");
+          }
         });
+      });
+
+      // --- 交通卡片折疊功能 ---
+      function toggleTransit(headerElement) {
+        // 找到這個 header 的父層 (transit-app-card)
+        const card = headerElement.parentElement;
+        // 切換 'open' 這個 class
+        card.classList.toggle("open");
+      }
     </script>
-</body>
+  </body>
 </html>
