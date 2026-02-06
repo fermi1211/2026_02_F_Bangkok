@@ -3,226 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我們這一家：日本京都之旅 2026</title>
-    <style>
-        /* --- 0. 基礎設定 (Reset & Variables) --- */
-        :root {
-            --primary-color: #2c3e50;  /* 深藍色 */
-            --accent-color: #e67e22;   /* 活力橘 */
-            --bg-color: #f4f7f6;       /* 淺灰背景 */
-            --text-color: #333;
-            --card-bg: #ffffff;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* --- 1. Hero Section (主視覺與倒數計時) --- */
-        header {
-            /* 圖片來源：Unsplash (可自行替換連結) */
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            min-height: 70vh; /* 手機上至少佔 70% 高度 */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .tagline {
-            font-size: 1.1rem;
-            background-color: var(--accent-color);
-            padding: 5px 15px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        /* 倒數計時器樣式 */
-        #countdown-box {
-            margin-top: 10px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px); /* 毛玻璃效果 */
-        }
-
-        #countdown-box p {
-            font-size: 0.9rem;
-            color: #ddd;
-            margin-bottom: 8px;
-        }
-
-        .timer {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .timer div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .timer span {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--accent-color);
-            line-height: 1;
-        }
-
-        .timer small {
-            font-size: 0.7rem;
-            color: #fff;
-            text-transform: uppercase;
-        }
-
-        /* --- 2. 資訊列 (Info Bar) --- */
-        .info-bar {
-            background: white;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            flex-wrap: wrap; /* 手機版自動換行 */
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-        
-        /* --- 3. 版面控制 --- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
-            color: var(--primary-color);
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
-        /* --- 4. 行程卡片 (Responsive Grid) --- */
-        .timeline {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .day-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .day-card:hover {
-            transform: translateY(-5px); /* 滑鼠移過去會浮起來 */
-        }
-
-        .day-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .day-header h3 { font-size: 1.2rem; }
-        .day-header span { font-size: 0.9rem; opacity: 0.8; }
-
-        .day-body {
-            padding: 20px;
-        }
-
-        .activity-list {
-            list-style: none;
-        }
-
-        .activity-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-        }
-        
-        .activity-list li:last-child { border-bottom: none; }
-
-        .time {
-            font-weight: bold;
-            color: var(--accent-color);
-            width: 70px; /* 固定時間寬度 */
-            flex-shrink: 0;
-        }
-
-        .detail { color: #555; }
-
-        /* --- 5. Footer --- */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #888;
-            font-size: 0.9rem;
-            margin-top: 40px;
-            background-color: #eaeaea;
-        }
-
-        /* --- RWD 手機版微調 --- */
-        @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
-            .timer span { font-size: 1.5rem; }
-            .info-bar { gap: 20px; font-size: 0.9rem; }
-            .time { width: 55px; font-size: 0.9rem; }
-        }
-    </style>
+    <title>2026 過年泰國曼谷之旅</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-
     <header>
-        <h1>京都家庭夏日之旅</h1>
-        <div class="tagline">2026 Family Trip to Kyoto</div>
-        
+        <h1>2026 過年泰國曼谷之旅</h1>
+        <div class="tagline">2026.02.15 - 02.19</div>
         <div id="countdown-box">
             <p>距離出發還有：</p>
             <div class="timer">
@@ -234,99 +21,326 @@
         </div>
     </header>
 
-    <div class="info-bar">
-        <div class="info-item">📅 2026/07/01 - 07/05</div>
-        <div class="info-item">✈️ 星宇航空 JX800</div>
-        <div class="info-item">🏨 京都四條飯店</div>
+    <div class="nav-container">
+        <div class="nav-wrapper">
+            <button class="tab-btn active" onclick="openTab('tab-day1')">2/15(日)</button>
+            <button class="tab-btn" onclick="openTab('tab-day2')">2/16(一)</button>
+            <button class="tab-btn" onclick="openTab('tab-day3')">2/17(二)</button>
+            <button class="tab-btn" onclick="openTab('tab-day4')">2/18(三)</button>
+            <button class="tab-btn" onclick="openTab('tab-day5')">2/19(四)</button>
+            <button class="tab-btn" onclick="openTab('tab-checklist')">🎒 清單</button>
+        </div>
     </div>
 
     <div class="container">
-        <h2 class="section-title">每日行程</h2>
         
-        <div class="timeline">
-            
+        <div id="tab-day1" class="tab-content active">
+            <h2 class="section-title">Day 1 抵達曼谷</h2>
             <div class="day-card">
-                <div class="day-header">
-                    <h3>Day 1 出發日</h3>
-                    <span>7/01 (三)</span>
-                </div>
+                <div class="day-header"><h3>移動日 & 夜市</h3><span>2/15 (週日)</span></div>
                 <div class="day-body">
                     <ul class="activity-list">
-                        <li><span class="time">06:00</span><span class="detail">桃園機場集合 (第二航廈)</span></li>
-                        <li><span class="time">08:30</span><span class="detail">飛機起飛 ✈️</span></li>
-                        <li><span class="time">13:00</span><span class="detail">抵達關西機場 / 買 Haruka 票</span></li>
-                        <li><span class="time">16:00</span><span class="detail">飯店 Check-in 休息</span></li>
-                        <li><span class="time">18:00</span><span class="detail">晚餐：鴨川納涼床料理</span></li>
+                        <li>
+                            <span class="time">13:25</span>
+                            <div class="detail-wrapper">
+                                <span>桃園機場出發 (TPE)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">16:30</span>
+                            <div class="detail-wrapper">
+                                <span>抵達曼谷機場 (BKK)</span>
+                                <small style="color:#666">領行李、換錢</small>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">18:30</span>
+                            <div class="detail-wrapper">
+                                <span>飯店 Check-in 休息</span>
+                                <a href="http://googleusercontent.com/maps.google.com/query=Bangkok+Hotel" target="_blank" class="map-link">📍 導航</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">20:00</span>
+                            <div class="detail-wrapper">
+                                <span>晚餐：Jodd Fairs 喬德夜市</span>
+                                <small style="color:#666">必吃火山排骨、西瓜冰沙</small>
+                                <a href="http://googleusercontent.com/maps.google.com/query=Jodd+Fairs" target="_blank" class="map-link">📍 導航</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
+        </div>
 
+        <div id="tab-day2" class="tab-content">
+            <h2 class="section-title">Day 2 經典古蹟</h2>
             <div class="day-card">
-                <div class="day-header">
-                    <h3>Day 2 文化體驗</h3>
-                    <span>7/02 (四)</span>
-                </div>
+                <div class="day-header"><h3>皇宮與河岸風光</h3><span>2/16 (週一)</span></div>
                 <div class="day-body">
                     <ul class="activity-list">
-                        <li><span class="time">09:00</span><span class="detail">清水寺參拜 (穿和服?)</span></li>
-                        <li><span class="time">12:00</span><span class="detail">午餐：二三年坂湯豆腐</span></li>
-                        <li><span class="time">14:00</span><span class="detail">八坂神社 & 花見小路散步</span></li>
-                        <li><span class="time">16:30</span><span class="detail">回飯店小睡一下</span></li>
-                        <li><span class="time">19:00</span><span class="detail">晚餐：燒肉吃到飽</span></li>
+                        <li>
+                            <span class="time">09:00</span>
+                            <div class="detail-wrapper">
+                                <span>大皇宮 & 玉佛寺</span>
+                                <small style="color:#e74c3c">★ 需穿長褲/長裙、有袖上衣</small>
+                                <a href="http://googleusercontent.com/maps.google.com/query=The+Grand+Palace" target="_blank" class="map-link">📍 導航</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">11:30</span>
+                            <div class="detail-wrapper">
+                                <span>臥佛寺 (Wat Pho)</span>
+                                <a href="http://googleusercontent.com/maps.google.com/query=Wat+Pho" target="_blank" class="map-link">📍 導航</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">13:00</span>
+                            <div class="detail-wrapper">
+                                <span>午餐：鄭王廟對岸景觀餐廳</span>
+                                <small style="color:#666">推薦 The Deck (需預約)</small>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">15:30</span>
+                            <div class="detail-wrapper">
+                                <span>ICONSIAM 暹羅天地</span>
+                                <small style="color:#666">室內水上市場、吹冷氣</small>
+                                <a href="http://googleusercontent.com/maps.google.com/query=ICONSIAM" target="_blank" class="map-link">📍 導航</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
+        </div>
 
+        <div id="tab-day3" class="tab-content">
+            <h2 class="section-title">Day 3 親子樂園</h2>
             <div class="day-card">
-                <div class="day-header">
-                    <h3>Day 3 嵐山漫遊</h3>
-                    <span>7/03 (五)</span>
-                </div>
+                <div class="day-header"><h3>野生動物園一日遊</h3><span>2/17 (週二)</span></div>
                 <div class="day-body">
                     <ul class="activity-list">
-                        <li><span class="time">08:30</span><span class="detail">搭乘嵐山小火車</span></li>
-                        <li><span class="time">10:30</span><span class="detail">竹林之道拍照</span></li>
-                        <li><span class="time">12:30</span><span class="detail">午餐：廣川鰻魚飯 (已預約)</span></li>
-                        <li><span class="time">15:00</span><span class="detail">渡月橋 / 阿拉伯比卡咖啡</span></li>
-                        <li><span class="time">18:00</span><span class="detail">逛京都車站 / 買伴手禮</span></li>
+                        <li>
+                            <span class="time">08:30</span>
+                            <div class="detail-wrapper">
+                                <span>包車前往 Safari World</span>
+                                <a href="http://googleusercontent.com/maps.google.com/query=Safari+World+Bangkok" target="_blank" class="map-link">📍 導航</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">10:00</span>
+                            <div class="detail-wrapper">
+                                <span>野生動物園區 (Safari Park)</span>
+                                <small style="color:#666">近距離看長頸鹿、斑馬</small>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">12:00</span>
+                            <div class="detail-wrapper">
+                                <span>園區內午餐 & 海洋表演</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">16:00</span>
+                            <div class="detail-wrapper">
+                                <span>返回曼谷市區</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">18:30</span>
+                            <div class="detail-wrapper">
+                                <span>晚餐：建興酒家 (咖哩螃蟹)</span>
+                                <a href="http://googleusercontent.com/maps.google.com/query=Somboon+Seafood" target="_blank" class="map-link">📍 導航</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
+        </div>
+
+        <div id="tab-day4" class="tab-content">
+            <h2 class="section-title">Day 4 市區購物</h2>
+            <div class="day-card">
+                <div class="day-header"><h3>Shopping & 按摩</h3><span>2/18 (週三)</span></div>
+                <div class="day-body">
+                    <ul class="activity-list">
+                        <li>
+                            <span class="time">10:00</span>
+                            <div class="detail-wrapper">
+                                <span>參拜四面佛 (Erawan Shrine)</span>
+                                <a href="http://googleusercontent.com/maps.google.com/query=Erawan+Shrine" target="_blank" class="map-link">📍 導航</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">11:00</span>
+                            <div class="detail-wrapper">
+                                <span>Central World 購物中心</span>
+                                <small style="color:#666">曼谷最大百貨，午餐在這裡吃</small>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">14:30</span>
+                            <div class="detail-wrapper">
+                                <span>Let's Relax SPA 按摩</span>
+                                <small style="color:#666">享受 2 小時泰式按摩</small>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">17:00</span>
+                            <div class="detail-wrapper">
+                                <span>Big C 採買伴手禮</span>
+                                <small style="color:#666">Pocky、海苔、大哥豆</small>
+                                <a href="http://googleusercontent.com/maps.google.com/query=Big+C+Supercenter+Ratchadamri" target="_blank" class="map-link">📍 導航</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">19:30</span>
+                            <div class="detail-wrapper">
+                                <span>晚餐：高空酒吧 (Red Sky Bar)</span>
+                                <small style="color:#666">看夜景喝飲料</small>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-day5" class="tab-content">
+            <h2 class="section-title">Day 5 賦歸</h2>
+            <div class="day-card">
+                <div class="day-header"><h3>最後衝刺 & 機場</h3><span>2/19 (週四)</span></div>
+                <div class="day-body">
+                    <ul class="activity-list">
+                        <li>
+                            <span class="time">09:00</span>
+                            <div class="detail-wrapper">
+                                <span>飯店早餐 / 整理行李</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">11:00</span>
+                            <div class="detail-wrapper">
+                                <span>最後退房 Check-out</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">14:00</span>
+                            <div class="detail-wrapper">
+                                <span>前往機場 (預留 3 小時)</span>
+                                <small style="color:#666">可能會塞車，建議提早出發</small>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">15:10</span>
+                            <div class="detail-wrapper">
+                                <span>辦理登機 & 免稅店逛逛</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time">17:40</span>
+                            <div class="detail-wrapper">
+                                <span>飛機起飛 ✈️ 回溫暖的家</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-checklist" class="tab-content">
+            <h2 class="section-title">🎒 泰國行李檢查</h2>
+            <p style="text-align:center; color:#666; margin-bottom:15px; font-size:0.9rem;">2月天氣舒適，但早晚可能有微風</p>
             
-             </div>
+            <div class="checklist-grid">
+                <div class="check-category">
+                    <h3>🛂 證件與錢財</h3>
+                    <label class="check-item"><input type="checkbox" id="item-passport"><span>護照 (期限>6個月)</span></label>
+                    <label class="check-item"><input type="checkbox" id="item-visa"><span>簽證確認 (免簽?)</span></label>
+                    <label class="check-item"><input type="checkbox" id="item-baht"><span>泰銖現金</span></label>
+                    <label class="check-item"><input type="checkbox" id="item-card"><span>信用卡</span></label>
+                </div>
+                <div class="check-category">
+                    <h3>📱 APP與電子</h3>
+                    <label class="check-item"><input type="checkbox" id="item-sim"><span>網卡 (AIS/True)</span></label>
+                    <label class="check-item"><input type="checkbox" id="item-grab"><span>下載 Grab (叫車)</span></label>
+                    <label class="check-item"><input type="checkbox" id="item-powerbank"><span>行動電源</span></label>
+                </div>
+                <div class="check-category">
+                    <h3>👕 衣物</h3>
+                    <label class="check-item"><input type="checkbox" id="item-clothes"><span>夏日衣物 (透氣)</span></label>
+                    <label class="check-item"><input type="checkbox" id="item-longpants"><span>長褲 (大皇宮用)</span></label>
+                    <label class="check-item"><input type="checkbox" id="item-jacket"><span>薄外套 (冷氣強)</span></label>
+                    <label class="check-item"><input type="checkbox" id="item-swim"><span>泳衣</span></label>
+                </div>
+                <div class="check-category">
+                    <h3>💊 雜物</h3>
+                    <label class="check-item"><input type="checkbox" id="item-stomach"><span>腸胃藥 (必備!)</span></label>
+                    <label class="check-item"><input type="checkbox" id="item-mosquito"><span>防蚊液</span></label>
+                    <label class="check-item"><input type="checkbox" id="item-sun"><span>防曬乳</span></label>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <footer>
-        <p>Made with ❤️ by 爸爸/媽媽 | 祝我們旅途愉快！</p>
+        <p>Made by F.C. | 2026 Bangkok Trip</p>
     </footer>
 
     <script>
-        // ★★★ 請在這裡設定你的出發日期 ★★★
-        // 格式：YYYY-MM-DDTHH:MM:SS (T是必要的)
-        const tripDate = new Date("2026-02-15T13:30:00").getTime(); 
+        // 1. 分頁切換
+        function openTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
 
-        // 倒數計時函式
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+            
+            window.scrollTo({ top: 380, behavior: 'smooth' });
+        }
+
+        // 2. 倒數計時 (2026/02/15)
+        const tripDate = new Date("2026-02-15T13:25:00").getTime(); 
+
         const countdownFunction = setInterval(function() {
             const now = new Date().getTime();
             const distance = tripDate - now;
-
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // 更新 HTML 內容
             document.getElementById("days").innerText = days;
             document.getElementById("hours").innerText = hours;
             document.getElementById("minutes").innerText = minutes;
             document.getElementById("seconds").innerText = seconds;
 
-            // 時間到之後的顯示
             if (distance < 0) {
                 clearInterval(countdownFunction);
-                document.getElementById("countdown-box").innerHTML = "<h2 style='color:#e67e22'>🎉 旅程開始！享受假期吧！ 🎉</h2>";
+                document.getElementById("countdown-box").innerHTML = "<h2>🎉 出發啦！ 🎉</h2>";
             }
         }, 1000);
+
+        // 3. 檢查清單
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(box => {
+            const savedState = localStorage.getItem(box.id);
+            if (savedState === 'true') {
+                box.checked = true;
+                box.parentElement.classList.add('completed');
+            }
+            box.addEventListener('change', () => {
+                localStorage.setItem(box.id, box.checked);
+                if(box.checked) {
+                    box.parentElement.classList.add('completed');
+                } else {
+                    box.parentElement.classList.remove('completed');
+                }
+            });
+        });
     </script>
 </body>
 </html>
