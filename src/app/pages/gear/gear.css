@@ -1,0 +1,29 @@
+.gear-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+.gear-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.gear-item.checked {
+  background: #e3f2fd;
+}
+.gear-item.checked span {
+  text-decoration: line-through;
+  color: #888;
+}
+.reset-btn {
+  background: #eee;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}

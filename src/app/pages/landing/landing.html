@@ -1,0 +1,25 @@
+<div class="landing-container">
+  <header class="simple-header">
+    <h1>MY TRAVEL LOG</h1>
+    <p>SELECT A TRIP TO EXPLORE</p>
+  </header>
+
+  <div class="trip-grid">
+    <div
+      *ngFor="let trip of trips"
+      class="trip-card"
+      (click)="goToTrip(trip.id)"
+      [style.backgroundImage]="getBgStyle(trip.headerBg)"
+    >
+      <div class="overlay"></div>
+
+      <div class="card-content">
+        <span class="trip-year">{{ trip.startDate | date: 'yyyy' }}</span>
+        <h2>{{ trip.name }}</h2>
+        <p class="subtitle">{{ trip.headerSubtitle }}</p>
+
+        <button class="enter-btn">ENTER TRIP ➔</button>
+      </div>
+    </div>
+  </div>
+</div>

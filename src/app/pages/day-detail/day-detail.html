@@ -1,0 +1,54 @@
+<div class="container" *ngIf="dayData; else noData" [ngClass]="themeId">
+  <h2 class="section-title">DAY {{ dayData.id }}</h2>
+
+  <div
+    class="day-card"
+    [style.border-left-color]="dayData.isGameDay ? 'var(--secondary-color)' : ''"
+  >
+    <div
+      class="day-header"
+      [style.border-bottom-color]="dayData.isGameDay ? 'var(--primary-color)' : ''"
+    >
+      <h3>{{ dayData.title }}</h3>
+      <span [style.color]="dayData.isGameDay ? 'var(--secondary-color)' : ''">{{
+        dayData.date
+      }}</span>
+    </div>
+
+    <div class="day-body">
+      <ul class="activity-list">
+        <li *ngFor="let item of dayData.activities">
+          <div
+            class="activity"
+            *ngIf="!item.transit"
+            style="display: flex; padding: 15px 0; border-bottom: 1px solid #eee"
+          >
+            <span class="time">{{ item.time }}</span>
+            <div class="detail-wrapper">
+              <span>
+                {{ item.title }}
+                <a
+                  *ngIf="item.locationLink"
+                  [href]="item.locationLink"
+                  target="_blank"
+                  class="location-badge"
+                  >📍 導航</a
+                >
+              </span>
+              <small *ngIf="item.desc">{{ item.desc }}</small>
+            </div>
+          </div>
+
+          <app-transit-card *ngIf="item.transit" [data]="item.transit"></app-transit-card>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<ng-template #noData>
+  <div class="container" style="text-align: center; padding: 50px">
+    <h2>Loading...</h2>
+    <p>正在讀取行程資料...</p>
+  </div>
+</ng-template>

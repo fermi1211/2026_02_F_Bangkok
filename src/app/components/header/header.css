@@ -1,0 +1,121 @@
+header {
+  background-size: cover;
+  background-position: center;
+  min-height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.menu-toggle {
+  position: fixed; /* 關鍵：固定在視窗上 */
+  left: 20px;
+  top: 20px;
+
+  /* 為了怕背景太亂看不清楚，加深一點背景色 */
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1001; /* 確保層級最高，蓋過其他內容 */
+  backdrop-filter: blur(2px); /* 質感加分 */
+}
+.menu-toggle:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+}
+.tagline {
+  font-size: 1rem;
+  background-color: rgba(230, 126, 34, 0.9); /* 半透明橘色 */
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+#countdown-box {
+  background: rgba(0, 0, 0, 0.4); /* 加深背景讓字更清楚 */
+  padding: 10px 25px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.timer {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 5px;
+}
+.timer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.timer span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffca28; /* 金黃色數字 */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  line-height: 1;
+}
+.timer small {
+  font-size: 0.7rem;
+  color: #fff;
+}
+.nav-container {
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 15px 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  min-width: max-content;
+  padding: 0 20px;
+  gap: 10px;
+}
+
+@media (min-width: 601px) {
+  .nav-wrapper {
+    justify-content: center;
+  }
+}
+
+.tab-btn {
+  border: 1px solid #ddd;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #666;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.tab-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 8px rgba(211, 84, 0, 0.3);
+  transform: scale(1.05);
+}

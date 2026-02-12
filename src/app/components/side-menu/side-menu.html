@@ -1,0 +1,36 @@
+<div class="menu-overlay" [class.open]="isOpen" (click)="close()"></div>
+<div class="menu-panel" [class.open]="isOpen">
+  <div class="menu-header">
+    <h3>MY TRIPS</h3>
+    <button class="close-btn" (click)="close()">✕</button>
+  </div>
+
+  <div class="trip-list">
+    <div class="trip-item home-item" (click)="goHome()">
+      <div class="trip-icon" style="background: #333"></div>
+      <div class="trip-info">
+        <span class="trip-name">回首頁</span>
+        <small style="color: #999; font-size: 0.8rem">MAIN PAGE</small>
+      </div>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0" />
+    
+    <div
+      *ngFor="let trip of trips"
+      class="trip-item"
+      [class.active]="trip.id === tripService.currentTripId()"
+      (click)="selectTrip(trip.id)"
+    >
+      <div class="trip-icon" [style.background]="getThemeColor(trip.themeId)"></div>
+      <div class="trip-info">
+        <span class="trip-name">{{ trip.name }}</span>
+        <small style="color: #999; font-size: 0.8rem">{{ trip.id | uppercase }}</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-footer">
+    <p>Current Theme: {{ tripService.currentTripId() }}</p>
+  </div>
+</div>

@@ -1,0 +1,597 @@
+/* You can add global styles to this file, and also import other style files */
+/* --- 0. WBC 方案二配色 (邁阿密 x 東京) --- */
+:root {
+  --primary-color: #0077be; /* 海洋藍 (東京/專業) */
+  --primary-dark: #00588f; /* 深藍 (用於文字) */
+  --secondary-color: #ff6b6b; /* 珊瑚紅 (邁阿密/縫線) */
+  --accent-color: #00c4b4; /* 邁阿密青 (亮點/按鈕) */
+  --bg-color: #f0f8ff; /* 愛麗絲藍 (清爽背景) */
+  --map-btn-color: #2980b9;
+  --card-bg: #ffffff;
+  --text-color: #2c3e50;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif; /* 內文用易讀黑體 */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  background-image: radial-gradient(#e1eff9 1px, transparent 1px);
+  background-size: 20px 20px; /* 點狀背景增加質感 */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 最小高度為視窗高度 */
+}
+
+html,
+body {
+  height: 100%; /* 確保高度填滿 */
+  margin: 0;
+  padding: 0;
+}
+
+/* 標題專用字體 */
+h1,
+h2,
+h3,
+.tab-btn,
+.time,
+.transit-tag {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase; /* 強制大寫 */
+  letter-spacing: 1px;
+}
+
+/* --- 3. 內容區塊 --- */
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: var(--primary-dark);
+  border-bottom: 3px solid var(--secondary-color);
+  display: inline-block;
+  padding-bottom: 5px;
+  /* 讓標題置中 */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* --- 4. 行程卡片 (棒球風格) --- */
+.day-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+  border-left: 8px solid var(--primary-color); /* 粗邊框 */
+}
+
+.day-header {
+  background: linear-gradient(to right, #f8f9fa, #fff);
+  color: var(--primary-dark);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed var(--secondary-color); /* ★★★ 棒球縫線設計 ★★★ */
+}
+.day-header h3 {
+  font-size: 1.4rem;
+  font-style: italic;
+}
+.day-header span {
+  font-weight: bold;
+  color: var(--secondary-color);
+  font-family: 'Oswald';
+  font-size: 1.1rem;
+}
+
+.day-body {
+  padding: 10px 20px 20px;
+}
+
+.activity-list {
+  list-style: none;
+}
+.activity-list li.activity {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: flex-start;
+}
+
+.time {
+  font-weight: bold;
+  color: var(--primary-color);
+  width: 70px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 1.1rem;
+}
+
+.detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.location-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--map-btn-color);
+  text-decoration: none;
+  background: #eaf6ff;
+  padding: 2px 10px;
+  border-radius: 12px;
+  width: fit-content;
+  transition: all 0.2s;
+  font-weight: bold;
+}
+.location-badge:hover {
+  background-color: var(--map-btn-color);
+  color: white;
+}
+
+/* --- ★★★ 交通卡片：折疊與費用版 ★★★ --- */
+.transit-app-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin: 15px 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  border: 1px solid #eee;
+}
+
+/* 1. 可點擊的標題列 (Header) */
+.transit-header {
+  background-color: #f8f9fa;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer; /* 讓滑鼠變手手 */
+  transition: background 0.2s;
+  user-select: none;
+}
+
+.transit-header:hover {
+  background-color: #f1f2f6;
+}
+
+/* 左側摘要 */
+.th-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.th-route {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.th-time {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* 路線標籤 (如 ARL) */
+.transit-tag {
+  background-color: #e3f2fd;
+  color: #1565c0;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* 右側總價與箭頭 */
+.th-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.th-price {
+  font-weight: bold;
+  color: #e67e22;
+  font-size: 1.1rem;
+}
+.th-arrow {
+  font-size: 0.8rem;
+  color: #999;
+  transition: transform 0.3s ease;
+}
+
+/* 展開時箭頭旋轉 */
+.transit-app-card.open .th-arrow {
+  transform: rotate(180deg);
+}
+
+/* 2. 隱藏的內容區 (Body) */
+.transit-body {
+  display: none; /* 預設隱藏 */
+  padding: 0;
+  background-color: #fff;
+  animation: slideDown 0.3s ease;
+}
+.transit-app-card.open .transit-body {
+  display: block;
+} /* 加上 open class 就顯示 */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 時間軸樣式 (維持原樣) */
+.transit-timeline {
+  padding: 15px 15px 5px 5px;
+}
+.transit-row {
+  display: flex;
+  position: relative;
+}
+.t-time {
+  width: 50px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+  padding-right: 10px;
+  line-height: 1.2;
+}
+.t-line-col {
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.t-line-bar {
+  width: 6px;
+  background-color: #ddd;
+  flex-grow: 1;
+  min-height: 40px;
+}
+.t-station-dot {
+  width: 14px;
+  height: 14px;
+  background: white;
+  border: 3px solid #ddd;
+  border-radius: 50%;
+  z-index: 2;
+  margin-top: 5px;
+}
+.t-content {
+  flex: 1;
+  padding-left: 10px;
+  padding-bottom: 25px;
+}
+.t-station-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 4px;
+}
+.t-info {
+  font-size: 0.85rem;
+  color: #666;
+  background: #f9f9f9;
+  padding: 6px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* 最後一站處理 */
+.transit-row:last-child .t-content {
+  padding-bottom: 0;
+}
+.transit-row:last-child .t-line-bar {
+  display: none;
+}
+
+/* 3. ★★★ 新增：費用明細區塊 ★★★ */
+.cost-section {
+  border-top: 1px dashed #eee;
+  padding: 12px 15px;
+  background-color: #fffaf0; /* 淡淡的橘黃底，強調金錢 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.cost-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #555;
+  font-weight: bold;
+}
+.cost-detail {
+  color: #333;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  color: #888;
+  font-size: 0.9rem;
+  font-family: 'Oswald';
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* --- ★★★ WBC 棒球風格交通卡 (The Base Path) ★★★ --- */
+.wbc-transit-card {
+  background: white;
+  border-radius: 4px; /* 稍微方一點，比較像票券 */
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1); /* 硬陰影，運動風 */
+  border: 2px solid var(--primary-color);
+  margin: 20px 0;
+  overflow: hidden;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+/* 1. 卡片頭部 (像是球賽門票 Header) */
+.wbc-transit-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 2px dashed white; /* 票券撕線效果 */
+}
+
+.wbc-th-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.wbc-th-route {
+  font-family: 'Oswald';
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wbc-th-time {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  font-family: 'Oswald';
+}
+
+/* 交通工具標籤 (如 FLIGHT) */
+.wbc-tag {
+  background-color: var(--secondary-color); /* 縫線紅 */
+  color: white;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  transform: skew(-10deg); /* 斜角設計 */
+  font-weight: bold;
+}
+.wbc-tag span {
+  display: block;
+  transform: skew(10deg);
+}
+
+/* 2. 卡片內容 (球場紅土/壘包風格) */
+.wbc-transit-body {
+  display: none; /* 預設隱藏 */
+  padding: 20px 15px;
+  background-color: #fff;
+  /* 淡淡的條紋背景，像球衣 */
+  background-image: repeating-linear-gradient(
+    45deg,
+    #fcfcfc 0,
+    #fcfcfc 10px,
+    #f4f4f4 10px,
+    #f4f4f4 20px
+  );
+}
+.wbc-transit-card.open .wbc-transit-body {
+  display: block;
+  animation: slideIn 0.3s;
+}
+
+/* 3. 棒球縫線時間軸 */
+.wbc-timeline {
+  padding-left: 5px;
+}
+.wbc-row {
+  display: flex;
+  position: relative;
+}
+
+/* 時間 */
+.wbc-time {
+  width: 55px;
+  text-align: right;
+  font-family: 'Oswald';
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+  padding-right: 15px;
+}
+
+/* 中間線條 (重點！) */
+.wbc-line-col {
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ★ 縫線設計 ★ */
+.wbc-stitch-line {
+  width: 4px;
+  background: transparent;
+  border-left: 3px dashed var(--secondary-color); /* 紅色虛線 */
+  flex-grow: 1;
+  min-height: 40px;
+  margin-left: 1px; /* 微調置中 */
+}
+
+/* ★ 壘包設計 (菱形) ★ */
+.wbc-base-dot {
+  width: 14px;
+  height: 14px;
+  background: white;
+  border: 3px solid var(--primary-color);
+  transform: rotate(45deg); /* 旋轉變成菱形壘包 */
+  z-index: 2;
+  margin-top: 6px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* 內容文字 */
+.wbc-content {
+  flex: 1;
+  padding-left: 15px;
+  padding-bottom: 30px;
+}
+.wbc-station {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 5px;
+}
+.wbc-info {
+  font-size: 0.85rem;
+  color: #555;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-left: 4px solid var(--accent-color); /* 左側青色線條 */
+}
+
+/* 收尾處理 */
+.wbc-row:last-child .wbc-content {
+  padding-bottom: 0;
+}
+.wbc-row:last-child .wbc-stitch-line {
+  display: none;
+}
+
+/* 費用區 */
+.wbc-cost {
+  margin-top: 15px;
+  border-top: 2px solid #eee;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Oswald';
+  color: var(--primary-dark);
+}
+
+/* --- 首頁專用樣式：賽程儀表板 --- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* 每一天的按鈕卡片 */
+.schedule-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  text-decoration: none; /* 去除底線 */
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 懸停效果：變色 + 浮起 */
+.schedule-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 119, 190, 0.2);
+}
+
+/* 左側：日期與天數 */
+.sc-left h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+.sc-left span {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-family: 'Noto Sans TC';
+}
+
+/* 右側：箭頭 */
+.sc-arrow {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+/* 裝飾：角落的縫線 */
+.schedule-card::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 40px;
+  height: 40px;
+  background: var(--secondary-color);
+  transform: rotate(45deg);
+}
+
+/* 特別強調：比賽日 (Day 2, Day ?) */
+.schedule-card.game-day {
+  border-color: var(--secondary-color);
+  background: #fff5f5;
+}
+.schedule-card.game-day h3 {
+  color: var(--secondary-color);
+}
+
+.section-desc {
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+}

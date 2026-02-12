@@ -1,0 +1,20 @@
+<div class="container">
+  <h2 class="section-title">TEAM GEAR CHECK</h2>
+  <div class="day-card" style="border-left: 8px solid var(--primary-color)">
+    <div class="day-header" style="border-bottom: 2px dashed var(--secondary-color)">
+      <h3>必備物品</h3>
+      <span style="color: var(--secondary-color)">CHECKLIST</span>
+    </div>
+    <div class="day-body">
+      <div class="gear-grid">
+        <label *ngFor="let item of items" class="gear-item" [class.checked]="item.checked">
+          <input type="checkbox" [(ngModel)]="item.checked" (change)="saveState()" />
+          <span>{{ item.label }}</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 20px">
+    <button (click)="resetAll()" class="reset-btn">重置清單</button>
+  </div>
+</div>

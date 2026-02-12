@@ -1,0 +1,22 @@
+.main-content {
+  flex: 1;
+  width: 100%;
+}
+
+.floating-menu-btn {
+  position: fixed; /* 關鍵：固定在視窗上 */
+  top: 20px;
+  left: 20px;
+  z-index: 1001; /* 確保層級最高 */
+
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.floating-menu-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}

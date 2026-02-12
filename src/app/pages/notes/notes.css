@@ -1,0 +1,24 @@
+.notes-grid {
+  display: grid;
+  gap: 20px;
+}
+.note-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border-top: 5px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.note-card h3 {
+  margin-top: 0;
+  font-family: 'Oswald';
+}
+.note-card.warning {
+  border-top-color: #e74c3c;
+}
+.note-card.caution {
+  border-top-color: #f39c12;
+}
+.note-card.info {
+  border-top-color: var(--primary-color);
+}

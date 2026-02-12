@@ -1,0 +1,125 @@
+.container {
+  padding-bottom: 40px;
+}
+.trip-name {
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: var(--header-font);
+  font-size: 1.2rem;
+}
+.section-title {
+  font-family: var(--header-font);
+}
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* =========================================
+       預設樣式 (基底)
+       ========================================= */
+.schedule-card {
+  background: white;
+  padding: 20px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+.sc-left {
+  z-index: 1;
+  position: relative;
+}
+/* 使用變數字體，不再寫死 Oswald */
+.sc-left h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-family: var(--header-font, 'sans-serif');
+}
+.sc-left span {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: bold;
+}
+.sc-arrow {
+  font-size: 1.5rem;
+  color: #ccc;
+  transition: transform 0.2s;
+}
+
+.schedule-card:hover {
+  transform: translateY(-5px);
+}
+.schedule-card:hover .sc-arrow {
+  transform: translateX(5px);
+  color: var(--primary-color);
+}
+
+/* =========================================
+       主題 7: Bangkok (曼谷優雅版)
+       特色：圓潤字體、奶油底、泰式奶茶色邊框
+       ========================================= */
+.bkk-cny .trip-name {
+  color: var(--primary-color) !important;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-shadow: none; /* 拿掉霓虹發光 */
+}
+
+.bkk-cny .schedule-card {
+  background: white;
+  border: 2px solid var(--primary-color); /* 泰奶色邊框 */
+  border-radius: 16px; /* 更圓的角 */
+  box-shadow: 4px 4px 0 var(--secondary-color); /* 金色實心影 */
+}
+
+/* 標題改用圓潤字體，顏色加深 */
+.bkk-cny .schedule-card h3 {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.bkk-cny .schedule-card span {
+  color: #8d6e63; /* 咖啡色文字，對比比較舒服 */
+  font-weight: 600;
+}
+
+/* 懸浮效果：浮起來，影子變深 */
+.bkk-cny .schedule-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--accent-color); /* 懸浮時影子變綠色 */
+  background: #fffdf5;
+}
+
+.bkk-cny .sc-arrow {
+  color: var(--secondary-color);
+  background: var(--primary-color);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  text-shadow: none;
+}
+
+/* 比賽日/特殊日：變成滿版泰奶色 */
+.bkk-cny .game-day {
+  background: var(--primary-color);
+  border-color: var(--secondary-color);
+}
+.bkk-cny .game-day h3 {
+  color: white !important;
+}
+.bkk-cny .game-day span {
+  color: var(--secondary-color);
+}

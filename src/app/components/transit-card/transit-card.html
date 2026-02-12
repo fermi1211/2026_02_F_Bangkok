@@ -1,0 +1,75 @@
+<div class="transit-app-card" [class.open]="isOpen">
+  <div class="transit-header" (click)="toggle()">
+    <div class="th-left">
+      <div class="th-route">
+        <div class="transit-tag" [style.background-color]="data.bgColor">
+          <span [style.color]="data.color">{{ data.type }}</span>
+        </div>
+        {{ data.route }}
+      </div>
+      <div class="th-time">{{ data.timeRange }} ({{ data.duration }})</div>
+    </div>
+    <div class="th-right">
+      <div class="th-price" [style.color]="data.color">{{ data.price }}</div>
+      <div class="th-arrow">▼</div>
+    </div>
+  </div>
+
+  <div class="transit-body">
+    <div class="transit-timeline">
+      <div class="transit-row">
+        <div class="t-time">{{ data.timeRange.split('-')[0] }}</div>
+        <div class="t-line-col">
+          <div class="t-station-dot" [style.border-color]="data.color"></div>
+          <div class="t-line-bar" [style.background-color]="data.color"></div>
+        </div>
+        <div class="t-content">
+          <div class="t-station-name">
+            {{ data.startStation }}
+            <a
+              *ngIf="data.startLocationLink"
+              [href]="data.startLocationLink"
+              target="_blank"
+              class="location-badge"
+              >📍 導航</a
+            >
+          </div>
+          <div class="t-info" >
+            <strong>{{ data.startDescription }}</strong
+            ><br />
+            <small>{{ data.startDetail }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="transit-row">
+        <div class="t-time">{{ data.timeRange.split('-')[1] }}</div>
+        <div class="t-line-col">
+          <div class="t-station-dot" [style.border-color]="data.color"></div>
+        </div>
+        <div class="t-content">
+          <div class="t-station-name">
+            {{ data.endStation
+            }}<a
+              *ngIf="data.endLocationLink"
+              [href]="data.endLocationLink"
+              target="_blank"
+              class="location-badge"
+              >📍 導航</a
+            >
+          </div>
+          <div class="t-info">
+            <strong>{{ data.endDescription }}</strong
+            ><br />
+            <small>{{ data.endDetail }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cost-section" style="background-color: #fffaf0">
+      <div class="cost-label" [style.color]="data.color">
+        <span>{{ data.additionalInfo }}</span>
+      </div>
+      <div class="cost-detail" style="color: #666">{{ data.additionalDetail }}</div>
+    </div>
+  </div>
+</div>

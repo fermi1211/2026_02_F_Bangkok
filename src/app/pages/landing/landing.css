@@ -1,0 +1,117 @@
+.landing-container {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: 50px;
+}
+
+/* 簡約 Header */
+.simple-header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: white;
+  margin-bottom: 30px;
+}
+.simple-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 2px;
+  color: #333;
+}
+.simple-header p {
+  margin: 10px 0 0;
+  color: #888;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+/* Grid 佈局 */
+.trip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 卡片樣式 */
+.trip-card {
+  position: relative;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.trip-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* 黑色遮罩 (讓文字清楚) */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
+  transition: background 0.3s;
+}
+.trip-card:hover .overlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9));
+}
+
+/* 卡片內容 */
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  color: white;
+  z-index: 1;
+}
+.trip-year {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  backdrop-filter: blur(5px);
+}
+h2 {
+  margin: 15px 0 5px;
+  font-size: 1.8rem;
+  font-family: 'Oswald', sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.subtitle {
+  margin: 0 0 20px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* 按鈕 */
+.enter-btn {
+  background: white;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+/* 滑鼠懸浮時才顯示按鈕 */
+.trip-card:hover .enter-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+.enter-btn:hover {
+  background: #eee;
+}

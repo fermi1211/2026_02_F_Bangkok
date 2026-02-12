@@ -1,0 +1,35 @@
+<div class="container" [ngClass]="tripService.currentTrip()?.themeId">
+  <h2 class="section-title">FULL SCHEDULE</h2>
+  <p class="trip-name">{{ tripName }}</p>
+
+  <div class="dashboard-grid">
+    <a
+      *ngFor="let day of days"
+      [routerLink]="['day', day.id]"
+      class="schedule-card"
+      [class.game-day]="day.isGameDay"
+    >
+      <div class="sc-left">
+        <h3>DAY {{ day.id }}</h3>
+        <span>{{ day.title }}</span>
+      </div>
+      <div class="sc-arrow">❯</div>
+    </a>
+
+    <a [routerLink]="['gear']" class="schedule-card info-card gear">
+      <div class="sc-left">
+        <h3 class="info-title">檢查清單</h3>
+        <span></span>
+      </div>
+      <div class="sc-arrow">❯</div>
+    </a>
+
+    <a [routerLink]="['notes']" class="schedule-card info-card notes">
+      <div class="sc-left">
+        <h3 class="info-title">注意事項</h3>
+        <span></span>
+      </div>
+      <div class="sc-arrow">❯</div>
+    </a>
+  </div>
+</div>
